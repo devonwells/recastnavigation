@@ -29,5 +29,6 @@ Members in this module are wrappers around the standard math library
 #	define dtMathSinf(x) sunmath::sinf(x)
 #	define dtMathAtan2f(y, x) sunmath::atan2f(y, x)
 #endif
+#include <math.h>
 
 #endif
