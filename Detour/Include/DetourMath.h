@@ -8,7 +8,7 @@ Members in this module are wrappers around the standard math library
 
 */
 
-#if 0
+#if defined(_NO_SUNMATH_)
 #	include <math.h>
 
 #	define dtMathFabsf(x) fabsf(x)
