@@ -58,7 +58,7 @@ static int isectRaySeg(const float* ap, const float* u,
 	dtVsub(v,bq,bp);
 	dtVsub(w,ap,bp);
 	float d = dtVperp2D(u,v);
-	if (dtMathFabs(d) < 1e-6f) return 0;
+	if (dtMathFabsf(d) < 1e-6f) return 0;
 	d = 1.0f/d;
 	t = dtVperp2D(v,w) * d;
 	if (t < 0 || t > 1) return 0;
@@ -495,8 +495,8 @@ int dtObstacleAvoidanceQuery::sampleVelocityAdaptive(const float* pos, const flo
 		float a = dang + (j&1)*0.5f*da;
 		for (int i = 0; i < nd; ++i)
 		{
-			pat[npat*2+0] = cosf(a)*r;
-			pat[npat*2+1] = sinf(a)*r;
+			pat[npat*2+0] = dtMathCosf(a)*r;
+			pat[npat*2+1] = dtMathSinf(a)*r;
 			npat++;
 			a += da;
 		}

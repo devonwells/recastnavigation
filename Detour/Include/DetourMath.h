@@ -11,7 +11,7 @@ Members in this module are wrappers around the standard math library
 #if 0
 #	include <math.h>
 
-#	define dtMathFabs(x) fabs(x)
+#	define dtMathFabsf(x) fabsf(x)
 #	define dtMathSqrtf(x) sqrtf(x)
 #	define dtMathFloorf(x) floorf(x)
 #	define dtMathCeilf(x) ceilf(x)
@@ -21,7 +21,7 @@ Members in this module are wrappers around the standard math library
 #else
 #	include <sunmath.h>
 
-#	define dtMathFabs(x) sunmath::fabs(x)
+#	define dtMathFabsf(x) sunmath::fabsf(x)
 #	define dtMathSqrtf(x) sunmath::sqrtf(x)
 #	define dtMathFloorf(x) sunmath::floorf(x)
 #	define dtMathCeilf(x) sunmath::ceilf(x)
@@ -29,6 +29,5 @@ Members in this module are wrappers around the standard math library
 #	define dtMathSinf(x) sunmath::sinf(x)
 #	define dtMathAtan2f(y, x) sunmath::atan2f(y, x)
 #endif
-#include <math.h>
 
 #endif

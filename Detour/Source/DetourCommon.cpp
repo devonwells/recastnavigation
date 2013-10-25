@@ -134,7 +134,7 @@ bool dtIntersectSegmentPoly2D(const float* p0, const float* p1,
 		dtVsub(diff, p0, &verts[j*3]);
 		const float n = dtVperp2D(edge, diff);
 		const float d = dtVperp2D(dir, edge);
-		if (fabsf(d) < EPS)
+		if (dtMathFabsf(d) < EPS)
 		{
 			// S is nearly parallel to this edge
 			if (n < 0)
@@ -385,7 +385,7 @@ bool dtIntersectSegSeg2D(const float* ap, const float* aq,
 	dtVsub(v,bq,bp);
 	dtVsub(w,ap,bp);
 	float d = vperpXZ(u,v);
-	if (fabsf(d) < 1e-6f) return false;
+	if (dtMathFabsf(d) < 1e-6f) return false;
 	s = vperpXZ(v,w) / d;
 	t = vperpXZ(u,w) / d;
 	return true;
